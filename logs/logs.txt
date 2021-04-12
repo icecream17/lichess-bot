@@ -1,0 +1,17 @@
+2021-04-11 10:28:28,497: 
+    .   _/|
+    .  // o\
+    .  || ._)  lichess-bot 1.2.0
+    .  //__\
+    .  )___(   Play on Lichess with a bot
+    
+2021-04-11 10:28:28,517: Starting new HTTPS connection (1): lichess.org:443
+2021-04-11 10:28:28,981: https://lichess.org:443 "GET /api/account HTTP/1.1" 200 None
+2021-04-11 10:28:28,981: Welcome thousandatom!
+2021-04-11 10:28:28,981: You're now connected to https://lichess.org/ and awaiting challenges.
+2021-04-11 10:29:06,847:     Accept Racing Kings casual challenge from StevenEmily(1504)
+2021-04-11 10:29:06,847: Resetting dropped connection: lichess.org
+2021-04-11 10:29:07,262: https://lichess.org:443 "POST /api/challenge/SZjV27Bz/accept HTTP/1.1" 200 11
+2021-04-11 10:29:07,262: --- Process Queue. Total Queued: 1. Total Used: 0
+2021-04-11 10:29:07,262: --- Process Used. Total Queued: 0. Total Used: 1
+2021-04-11 10:30:35,786: Recieved SIGINT. Terminating client.

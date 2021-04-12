@@ -41,6 +41,23 @@ def is_final(exception):
     return isinstance(exception, HTTPError) and exception.response.status_code < 500
 
 
+def inner_backoff_handler(details):
+    import sys
+    import traceback
+    import pretty_errors
+    error = sys.exc_info()[1]
+    logger.warn(f"Error!\n    {str(details)}\n    {error}\n")
+
+    pretty_errors.StdErr().write(traceback.format_exc())
+
+
+backoff_handler = logging.StreamHandler()
+backoff_handler.emit = inner_backoff_handler
+
+logging.getLogger('backoff').addHandler(backoff_handler)
+
+
+
 def upgrade_account(li):
     if li.upgrade_to_bot_account() is None:
         return False
@@ -60,8 +77,8 @@ def watch_control_stream(control_queue, li):
                     control_queue.put_nowait(event)
                 else:
                     control_queue.put_nowait({"type": "ping"})
-        except Exception:
-            pass
+        except Exception as error:
+            logger.debug(error)
 
 
 def start(li, user_profile, engine_factory, config):
@@ -108,8 +125,8 @@ def start(li, user_profile, engine_factory, config):
                             reason = "onlyBot"
                         li.decline_challenge(chlng.id, reason=reason)
                         logger.info("    Decline {} for reason '{}'".format(chlng, reason))
-                    except Exception:
-                        pass
+                    except Exception as error:
+                        logger.debug(error)
             elif event["type"] == "gameStart":
                 if queued_processes <= 0:
                     logger.debug("Something went wrong. Game is starting and we don't have a queued process")
@@ -151,7 +168,6 @@ def play_game(li, game_id, control_queue, engine_factory, user_profile, config, 
     game = model.Game(initial_state, user_profile["username"], li.baseUrl, config.get("abort_time", 20))
     engine = engine_factory()
     engine.get_opponent_info(game)
-    engine.set_time_control(game)
     conversation = Conversation(game, engine, li, __version__, challenge_queue)
 
     logger.info("+++ {}".format(game))
@@ -160,6 +176,7 @@ def play_game(li, game_id, control_queue, engine_factory, user_profile, config, 
     is_uci = engine_cfg["protocol"] == "uci"
     is_uci_ponder = is_uci and engine_cfg.get("uci_ponder", False)
     move_overhead = config.get("move_overhead", 1000)
+    minimum_move_ms = config.get("rate_limiting_delay", 0)
     polyglot_cfg = engine_cfg.get("polyglot", {})
 
     first_move = True
@@ -186,9 +203,16 @@ def play_game(li, game_id, control_queue, engine_factory, user_profile, config, 
                     best_move = get_book_move(board, polyglot_cfg)
                     if best_move is None:
                         if len(board.move_stack) < 2:
-                            best_move = choose_first_move(engine, board, is_uci_ponder)
+                            best_move = choose_first_move(engine, board)
                         else:
                             best_move = choose_move(engine, board, game, is_uci_ponder, start_time, move_overhead)
+
+                    time_taken = (time.perf_counter_ns() - start_time) * 1e6 # Nanoseconds to ms
+                    if time_taken < minimum_move_ms:
+                        delay = minimum_move_ms - timetaken
+                        logger.info(f"    Sleeping {delay} ms")
+                        time.sleep(delay / 1000)
+
                     li.make_move(game.id, best_move)
 
                 wb = 'w' if board.turn == chess.WHITE else 'b'
@@ -218,11 +242,11 @@ def play_game(li, game_id, control_queue, engine_factory, user_profile, config, 
     control_queue.put_nowait({"type": "local_game_done"})
 
 
-def choose_first_move(engine, board, ponder):
+def choose_first_move(engine, board):
     # need to hardcode first movetime (10000 ms) since Lichess has 30 sec limit.
     search_time = 10000
     logger.info("Searching for time {}".format(search_time))
-    return engine.first_search(board, search_time, ponder)
+    return engine.first_search(board, search_time)
 
 
 def get_book_move(board, polyglot_cfg):

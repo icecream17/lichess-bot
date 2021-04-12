@@ -1,4 +1,5 @@
 config.yml
 __pycache__
+.vscode
 /engines/*
 !/engines/README.md

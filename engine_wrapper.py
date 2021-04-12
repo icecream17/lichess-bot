@@ -44,11 +44,9 @@ class EngineWrapper:
     def __init__(self, commands, options, stderr):
         pass
 
-    def set_time_control(self, game):
-        pass
-
-    def first_search(self, board, movetime, ponder):
-        return self.search(board, chess.engine.Limit(time=movetime // 1000), ponder)
+    def first_search(self, board, movetime):
+        # See https://github.com/ShailChoksi/lichess-bot/pull/293
+        return self.search(board, chess.engine.Limit(time=movetime // 1000), False)
 
     def search_with_ponder(self, board, wtime, btime, winc, binc, ponder):
         pass
@@ -126,23 +124,12 @@ class XBoardEngine(EngineWrapper):
         self.engine.configure(options)
 
         self.last_move_info = {}
-        self.time_control_sent = False
-
-    def set_time_control(self, game):
-        self.minutes = game.clock_initial // 1000 // 60
-        self.seconds = game.clock_initial // 1000 % 60
-        self.inc = game.clock_increment // 1000
-
-    def send_time(self):
-        self.engine.protocol.send_line(f"level 0 {self.minutes}:{self.seconds} {self.inc}")
-        self.time_control_sent = True
 
     def search_with_ponder(self, board, wtime, btime, winc, binc, ponder):
-        if not self.time_control_sent:
-            self.send_time()
-
         time_limit = chess.engine.Limit(white_clock=wtime / 1000,
-                                        black_clock=btime / 1000)
+                                        black_clock=btime / 1000,
+                                        white_inc=winc / 1000,
+                                        black_inc=binc / 1000)
         return self.search(board, time_limit, ponder)
 
     def stop(self):
@@ -157,7 +144,7 @@ class XBoardEngine(EngineWrapper):
         if game.opponent.title == "BOT":
             self.engine.protocol.send_line("computer")
 
+
 def getHomemadeEngine():
-    raise NotImplementedError(
-        "    You haven't changed the getHomemadeEngine function yet!\n"
-        "    See docs/creating-a-custom-bot.md")
+    import strategies
+    return strategies.Thousandatom

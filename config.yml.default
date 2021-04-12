@@ -43,6 +43,7 @@ engine:                      # engine settings
 abort_time: 20               # time to abort a game in seconds when there is no activity
 fake_think_time: false       # artificially slow down the bot to pretend like it's thinking
 move_overhead: 2000          # increase if your bot flags games too often
+rate_limiting_delay: 100     # minimum time since last move (in ms) to prevent "Too Many Requests" errors
 
 challenge:                   # incoming challenges
   concurrency: 1             # number of games to play simultaneously
