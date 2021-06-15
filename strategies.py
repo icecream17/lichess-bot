@@ -105,7 +105,6 @@ def main():
     config = load_config("./config.yml")
 
     simulateGame([create_engine(config), create_engine(config)])
-    simulateGame([create_engine(config), RandomMover(None, None, None)])
 
 
 def simulateGame(engines):
