@@ -23,3 +23,135 @@
 [TimeControl "1800+40"]
 
 1. Nh3 d5 2. c4 Qd7 3. Na3 Qb5 4. g4 Qa5 5. e3 Qxa3 6. e4 f6 7. Qc2 dxe4 8. Rb1 h5 9. Kd1 Na6 10. Ng1 Qd3 11. Be2 g6 12. Qxd3 Bxg4 13. h4 exd3 14. f4 f5 15. a4 c5 16. a5 Rh7 17. Rh3 Rb8 18. Bxg4 Kf7 19. Nf3 Bh6 20. Rh1 b5 21. cxb5 e5 22. Rf1 Rxb5 23. Bh3 Rb3 24. Rh1 Rb6 25. Nd4 Rb8 26. Ne2 Rb6 27. Nd4 Rb5 28. Nf3 g5 29. Rf1 e4 30. Bg2 Rb7 31. b3 e3 32. Ra1 g4 33. Bh3 Kg7 34. Ng5 Rf7 35. Ra3 Kh8 36. Nf3 Bg7 37. Re1 Ne7 38. Ne5 exd2 39. Rg1 Kg8 40. Bf1 g3 41. Nf3 Nc6 42. Rg2 Bc3 43. Nd4 Rfg7 44. Bxd3 Nd8 45. Nxf5 Rh6 46. Bb1 Nb7 47. Nxh6+ Kh8 48. Ng8 Rc7 49. Ba2 Bb4 50. Rxg3 dxc1=N 51. Rf3 Ne2 52. Ne7 Ng3 53. f5 Ne2 54. Kc2 Rd7 55. Ng8 Bxa5 56. Kb1 Bc3 57. Nf6 Ng3 58. Rxc3 Rd2 59. Nxh5 Nh1 60. Nf4 c4 61. Re3 Rd1+ 62. Kc2 Rf1 63. Kd2 Rf2+ 64. Kc3 Rf3 65. Kd2 Kg7 66. Ng2 Rf2+ 67. Re2 Rf4 68. b4 Rf1 69. Rae3 Ra1 70. Nf4 Rf1 71. Ng2 Rxf5 72. h5 Na5 73. Bxc4 Kf6 74. Bg8 Rf3 75. bxa5 Rf4 76. Rf3 Nc7 77. Be6 Rf5 78. Rb3 Na8 79. Kc3 Rd5 80. Rd2 Rb5 81. Bh3 Rf5 82. Ra2 Ng3 83. Kb2 Rc5 84. Ka1 Kf7 85. Ne3 Kg7 86. Rd3 Nh1 87. h6+ Kf6 88. h7 a6 89. h8=B+ Kg6 90. Kb2 Nc7 91. Rd8 Kg5 92. Rf8 Rc6 93. Nd5 Rg6 94. Bc8 Kh4 95. Kc1 Kg5 96. Rh2 Rg7 97. Re8 Nxe8 98. Kc2 Rg6 99. Ba1 Nd6 100. Rh5+ Kxh5 101. Be6 Rg1 102. Kc3 Rg7 103. Kb2 Ra7 104. Bf7+ Nxf7 105. Kc3 Rb7 106. Kd2 Nd6 107. Bd4 Rb4 108. Ba1 Rb3 109. Nf4+ Kg4 110. Ke2 Rg3 111. Kd1 Nf2+ 112. Ke2 Nh3 113. Ng6 Nf2 114. Kxf2 Kg5 115. Ne7 Rd3 116. Nf5 Rh3 117. Bc3 Rh2+ 118. Kf1 Kg4 119. Bd4 Kh3 120. Nh6 Ne8 121. Bh8 Rd2 122. Bc3 Rd6 123. Kg1 Rc6 124. Bf6 Nxf6 125. Kf2 Rb6 126. axb6 Ne8 127. b7 Kh4 128. Ke1 Ng7 129. b8=N Ne6 130. Ng4 Kh3 131. Nd7 Kg2 132. Nf8 Nd4 133. Kd2 Kf1 134. Ke3 Kg2 135. Nf2 Nf5+ 136. Kd2 Ne3 137. Nh1 Nf5 138. Ng6 Nh6 139. Nh4+ Kh2 140. Nf3+ Kh3 141. Nh2 Nf7 142. Nf2+ Kxh2 143. Ke3 Kg3 144. Kd2 Nh8 145. Ng4 Nf7 146. Ne5 Nd6 147. Nf3 Ne8 148. Nh4 Ng7 149. Kc2 Kf4 150. Kb3 Kg5 151. Ka3 Ne6 152. Ng6 Nf4 153. Ne7 a5 154. Ng6 Kxg6 155. Kb2 Nd5 156. Ka1 Ne3 157. Kb2 Nc4+ 158. Kc1 Na3 159. Kd1 Kh5 160. Ke1 a4 161. Kd2 Nb5 162. Ke1 Nc7 163. Kd1 a3 164. Kc2 Kg4 165. Kd3 Na8 166. Kc4 Kf5 167. Kb5 Nc7+ 168. Kc6 Nb5 169. Kc5 Nc7 170. Kb6 Kg6 171. Kxc7 a2 172. Kc6 Kf6 173. Kc5 Kg5 174. Kb5 Kf4 175. Ka5 a1=R+ 176. Kb4 Ra3 177. Kc4 Kf5 178. Kb5 Kg4 179. Kc6 Kh3 180. Kd7 Kg2 181. Kc7 Rc3+ 182. Kd6 Kh3 183. Ke6 Rc5 184. Kd6 Re5 185. Kc6 Re1 186. Kb7 Kh4 187. Kb6 Rg1 188. Ka7 Rb1 189. Ka8 Rb4 190. Ka7 Rb1 191. Ka8 Re1 192. Ka7 Re4 193. Kb7 Re5 194. Kb6 Rc5 195. Kb7 Rf5 196. Kb6 Rf6+ 197. Kc7 Rf2 198. Kb8 Rf6 199. Kc8 Kg3 200. Kd8 Kh4 201. Kc7 Kg4 202. Kb7 Rb6+ 203. Kc7 Kf4 204. Kd7 Rh6 205. Ke8 Rh2 206. Kf7 Kg3 207. Kg8 Kg2 208. Kf8 Kf2 209. Ke7 Rg2 210. Kd7 Rg7+ 211. Kd6 Kf3 212. Ke6 Ke4 213. Kf6 Rg6+ 214. Kxg6 1/2-1/2
+
+[Event "debug - random opening"]
+[Site "computer"]
+[Date "2021.06.15"]
+[Round "2"]
+[White "Thousandatom"]
+[Black "Thousandatom"]
+[Result "1/2-1/2"]
+[Termination "normal"]
+[TimeControl "1800+40"]
+
+1. g3 f5 2. b4 d6 3. d4 e6 4. Bg2 Ne7 5. Bxb7 Rg8 6. Bxc8 Rh8 7. Bd7+ Kf7 8. Be8+ Kg8 9. Bf7+ Kxf7 10. Nh3 Rg8 11. Ng5+ Ke8 12. Nxh7 Rh8 13. Nxf8 Rg8 14. Nh7 Rh8 15. Nf8 Rg8 16. Nh7 Rh8 17. Nf8 Rg8 18. Nh7 Rh8 19. Nf8 Rg8 20. Nh7 Rh8 21. Nf8 1/2-1/2
+
+[Event "debug - random opening"]
+[Site "computer"]
+[Date "2021.06.15"]
+[Round "3"]
+[White "Thousandatom"]
+[Black "Thousandatom"]
+[Result "1/2-1/2"]
+[Termination "normal"]
+[TimeControl "1800+40"]
+
+1. d4 d5 2. f3 h6 3. Nd2 h5 4. Nc4 Rh7 5. Nd6+ Kd7 6. Ne8 Nh6 7. Nxg7 Bxg7 8. Nh3 Qh8 9. Ng5 Qg8 10. Nxh7 Qh8 11. Nf8+ Ke8 12. Nh7 Qg8 13. Nf8 Qh8 14. Nh7 Qg8 15. Nf8 Qh8 16. Nh7 Qg8 17. Nf8 Qh8 18. Nh7 Qg8 19. Nf8 Qh8 1/2-1/2
+
+[Event "debug - random opening"]
+[Site "computer"]
+[Date "2021.06.15"]
+[Round "4"]
+[White "Thousandatom"]
+[Black "Thousandatom"]
+[Result "1/2-1/2"]
+[Termination "normal"]
+[TimeControl "1800+40"]
+
+1. Nh3 Nh6 2. c4 Nc6 3. Na3 d5 4. Nb5 Rg8 5. Nxc7+ Kd7 6. Ne8 Rh8 7. Nxg7 Rg8 8. Ne8 Rh8 9. Ng7 Rg8 10. Ne8 Rh8 11. Ng7 Rg8 12. Ne8 Rh8 13. Ng7 Rg8 14. Ne8 Rh8 15. Ng7 1/2-1/2
+
+[Event "debug - random opening"]
+[Site "computer"]
+[Date "2021.06.15"]
+[Round "5"]
+[White "Thousandatom"]
+[Black "Thousandatom"]
+[Result "1/2-1/2"]
+[Termination "normal"]
+[TimeControl "1800+40"]
+
+1. Nf3 b6 2. Nd4 a5 3. c3 f5 4. Qc2 Nh6 5. Ne6 Rg8 6. Nxf8 Rh8 7. Nxh7 Rg8 8. Nf8 Rh8 9. Nh7 Rg8 10. Nf8 Rh8 11. Nh7 Rg8 12. Nf8 Rh8 13. Nh7 Rg8 14. Nf8 Rh8 15. Nh7 1/2-1/2
+
+[Event "debug - random opening"]
+[Site "computer"]
+[Date "2021.06.16"]
+[Round "6"]
+[White "Thousandatom"]
+[Black "Thousandatom"]
+[Result "1/2-1/2"]
+[Termination "normal"]
+[TimeControl "1800+40"]
+
+1. f4 Na6 2. d3 g6 3. Qd2 Nh6 4. Qd1 Bg7 5. Qd2 O-O 6. Qa5 Kh8 7. Qb6 Kg8 8. Qf6 Kh8 9. Qe6 Kg8 10. Qf6 Kh8 11. Qe6 Kg8 12. Qf6 Kh8 13. Qe6 Kg8 14. Qf6 Kh8 15. Qe6 Kg8 16. Qf6 1/2-1/2
+
+[Event "debug - random opening"]
+[Site "computer"]
+[Date "2021.06.17"]
+[Round "7"]
+[White "Thousandatom"]
+[Black "Thousandatom"]
+[Result "*"]
+[Termination "time forfeit"]
+[TimeControl "1800+40"]
+
+1. g3 Nf6 2. Bg2 g5 3. Na3 h6 4. Kf1 Ne4 5. Nb5 Rg8 6. Nxc7+ Qxc7 *
+
+[Event "debug - random opening"]
+[Site "computer"]
+[Date "2021.06.17"]
+[Round "8"]
+[White "Thousandatom"]
+[Black "Thousandatom"]
+[Result "*"]
+[Termination "time forfeit"]
+[TimeControl "1800+40"]
+
+1. e3 f6 2. Qg4 Nh6 3. Nh3 Nf5 4. Qf3 Rg8 5. Ng5 Rh8 *
+
+[Event "debug - random opening"]
+[Site "computer"]
+[Date "2021.06.17"]
+[Round "9"]
+[White "Thousandatom"]
+[Black "Thousandatom"]
+[Result "*"]
+[Termination "time forfeit"]
+[TimeControl "1800+40"]
+
+1. Nc3 b5 2. a4 h6 3. Ra2 Rh7 4. b3 *
+
+[Event "debug - random opening"]
+[Site "computer"]
+[Date "2021.06.17"]
+[Round "10"]
+[White "Thousandatom"]
+[Black "Thousandatom"]
+[Result "*"]
+[Termination "time forfeit"]
+[TimeControl "1800+40"]
+
+1. a3 f6 2. g3 e5 3. Nc3 c6 4. Nd5 Qe7 5. Nb6 Qb4 *
+
+[Event "debug - random opening"]
+[Site "computer"]
+[Date "2021.06.20"]
+[Round "11"]
+[White "Thousandatom"]
+[Black "Thousandatom"]
+[Result "*"]
+[Termination "time forfeit"]
+[TimeControl "1800+40"]
+
+1. d3 f5 2. b4 g5 3. f3 g4 4. h4 Bg7 5. Rh3 Bb2 6. Bg5 e6 7. h5 *
+
+[Event "debug - random opening"]
+[Site "computer"]
+[Date "2021.06.20"]
+[Round "12"]
+[White "Thousandatom"]
+[Black "Thousandatom"]
+[Result "*"]
+[Termination "time forfeit"]
+[TimeControl "1800+40"]
+
+1. e3 h5 2. f4 f5 3. Kf2 h4 4. Be2 h3 5. g3 b5 6. Bg4 Bb7 7. Qf1 *
