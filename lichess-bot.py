@@ -126,6 +126,17 @@ def start(li, user_profile, engine_factory, config, logging_level, log_filename)
                 event = control_queue.get()
             except InterruptedError:
                 continue
+<<<<<<< HEAD
+=======
+
+            if event.get("type") is None:
+                logger.warning("Unable to handle response from lichess.org:")
+                logger.warning(event)
+                if event.get("error") == "Missing scope":
+                    logger.warning('Please check that the API access token for your bot has the scope "Play games with the bot API".')
+                continue
+            
+>>>>>>> 444c4b61e307d64957d26398cd436839273c0182
             if event["type"] == "terminated":
                 break
             elif event["type"] == "local_game_done":
@@ -261,6 +272,7 @@ def play_game(li, game_id, control_queue, engine_factory, user_profile, config, 
                     if best_move.move is None:
                         draw_offered = check_for_draw_offer(game)
                         if len(board.move_stack) < 2:
+<<<<<<< HEAD
                             best_move = choose_first_move(engine, board, draw_offered)
                         elif is_correspondence:
                             best_move = choose_move_time(engine, board, correspondence_move_time, can_ponder, draw_offered)
@@ -270,6 +282,14 @@ def play_game(li, game_id, control_queue, engine_factory, user_profile, config, 
                         li.resign(game.id)
                     else:
                         li.make_move(game.id, best_move)
+=======
+                            best_move = choose_first_move(engine, board)
+                        elif is_correspondence:
+                            best_move = choose_move_time(engine, board, correspondence_move_time, can_ponder)
+                        else:
+                            best_move = choose_move(engine, board, game, can_ponder, start_time, move_overhead)
+                    li.make_move(game.id, best_move)
+>>>>>>> 444c4b61e307d64957d26398cd436839273c0182
                     time.sleep(delay_seconds)
                 elif is_game_over(game):
                     engine.report_game_result(game, board)
@@ -282,7 +302,11 @@ def play_game(li, game_id, control_queue, engine_factory, user_profile, config, 
                 if is_correspondence and not is_engine_move(game, board) and game.should_disconnect_now():
                     break
                 elif game.should_abort_now():
+<<<<<<< HEAD
                     logger.info("    Aborting {} by lack of activity".format(game.url()))
+=======
+                    logger.info("Aborting {} by lack of activity".format(game.url()))
+>>>>>>> 444c4b61e307d64957d26398cd436839273c0182
                     li.abort(game.id)
                     break
                 elif game.should_terminate_now():
@@ -308,6 +332,7 @@ def play_game(li, game_id, control_queue, engine_factory, user_profile, config, 
     control_queue.put_nowait({"type": "local_game_done"})
 
 
+<<<<<<< HEAD
 def choose_move_time(engine, board, search_time, ponder, draw_offered):
     logger.info("Searching for time {}".format(search_time))
     return engine.search_for(board, search_time, ponder, draw_offered)
@@ -318,6 +343,18 @@ def choose_first_move(engine, board, draw_offered):
     search_time = 10000
     logger.info("Searching for time {}".format(search_time))
     return engine.first_search(board, search_time, draw_offered)
+=======
+def choose_move_time(engine, board, search_time, ponder):
+    logger.info("Searching for time {}".format(search_time))
+    return engine.search_for(board, search_time, ponder)
+
+
+def choose_first_move(engine, board):
+    # need to hardcode first movetime (10000 ms) since Lichess has 30 sec limit.
+    search_time = 10000
+    logger.info("Searching for time {}".format(search_time))
+    return engine.first_search(board, search_time)
+>>>>>>> 444c4b61e307d64957d26398cd436839273c0182
 
 
 def get_book_move(board, polyglot_cfg):

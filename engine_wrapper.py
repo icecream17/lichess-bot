@@ -25,7 +25,11 @@ def create_engine(config):
     elif engine_type == "uci":
         Engine = UCIEngine
     elif engine_type == "homemade":
+<<<<<<< HEAD
         Engine = getHomemadeEngine()
+=======
+        Engine = getHomemadeEngine(cfg["name"])
+>>>>>>> 444c4b61e307d64957d26398cd436839273c0182
     else:
         raise ValueError(
             f"    Invalid engine type: {engine_type}. Expected xboard, uci, or homemade.")
@@ -59,6 +63,7 @@ class EngineWrapper:
     def __init__(self, commands, options, stderr):
         pass
 
+<<<<<<< HEAD
     def search_for(self, board, movetime, ponder, draw_offered):
         return self.search(board, chess.engine.Limit(time=movetime // 1000), ponder, draw_offered)
 
@@ -67,6 +72,16 @@ class EngineWrapper:
         return self.search(board, chess.engine.Limit(time=movetime // 1000), False, draw_offered)
 
     def search_with_ponder(self, board, wtime, btime, winc, binc, ponder, draw_offered):
+=======
+    def search_for(self, board, movetime, ponder):
+        return self.search(board, chess.engine.Limit(time=movetime // 1000), ponder)
+
+    def first_search(self, board, movetime):
+        # No pondering after the first move since a different clock is used afterwards.
+        return self.search(board, chess.engine.Limit(time=movetime // 1000), False)
+
+    def search_with_ponder(self, board, wtime, btime, winc, binc, ponder):
+>>>>>>> 444c4b61e307d64957d26398cd436839273c0182
         cmds = self.go_commands
         movetime = cmds.get("movetime")
         if movetime is not None:
@@ -78,7 +93,11 @@ class EngineWrapper:
                                         depth=cmds.get("depth"),
                                         nodes=cmds.get("nodes"),
                                         time=movetime)
+<<<<<<< HEAD
         return self.search(board, time_limit, ponder, draw_offered)
+=======
+        return self.search(board, time_limit, ponder)
+>>>>>>> 444c4b61e307d64957d26398cd436839273c0182
 
     def search(self, board, time_limit, ponder, draw_offered):
         result = self.engine.play(board, time_limit, info=chess.engine.INFO_ALL, ponder=ponder, draw_offered=draw_offered)
@@ -144,7 +163,11 @@ class XBoardEngine(EngineWrapper):
             options[f"egtpath {egt_type}"] = egt_paths[egt_type]
         self.engine.configure(options)
         self.last_move_info = {}
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 444c4b61e307d64957d26398cd436839273c0182
     def report_game_result(self, game, board):
         # Send final moves, if any, to engine
         self.engine.protocol._new(board, None, {})
@@ -200,6 +223,12 @@ class XBoardEngine(EngineWrapper):
             self.engine.protocol.send_line("computer")
 
 
+<<<<<<< HEAD
 def getHomemadeEngine():
     import thousandatom
     return thousandatom.Thousandatom
+=======
+def getHomemadeEngine(name):
+    import strategies
+    return eval(f"strategies.{name}")
+>>>>>>> 444c4b61e307d64957d26398cd436839273c0182

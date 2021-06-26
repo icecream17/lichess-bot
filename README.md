@@ -16,7 +16,7 @@ A bridge between [Lichess API](https://lichess.org/api#tag/Bot) and bots.
 - Setup virtualenv: `apt install python3-venv`
 ```
 python3 -m venv venv #if this fails you probably need to add Python3 to your PATH
-virtualenv .venv -p python3 #if this fails you probably need to add Python3 to your PATH
+virtualenv venv -p python3 #if this fails you probably need to add Python3 to your PATH
 source ./venv/bin/activate
 python3 -m pip install -r requirements.txt
 ```
@@ -88,6 +88,7 @@ pip install -r requirements.txt
 Use https://github.com/vochicong/lc0-nvidia-docker to easily run lc0 and lichess-bot
 inside a Docker container.
 
+<<<<<<< HEAD
 ## Creating a custom bot
 
 Steps to create a custom bot
@@ -97,10 +98,22 @@ Steps to create a custom bot
 3. Create a class in some file that extends `EngineWrapper` (in `engine_wrapper.py`)
     - Or extend `MinimalEngine` (in `strategies.py`),
       if you don't want to deal with a few random errors.
+=======
+## Creating a homemade bot
+
+As an alternative to creating an entire chess engine and implementing one of the communiciation protocols (UCI or XBoard), a bot can also be created by writing a single class with a single method. The `search()` method in this new class takes the current board and the game clock as arguments and should return a move based on whatever criteria the coder desires.
+
+Steps to create a homemade bot:
+
+1. Do all the steps in the [How to Install](#how-to-install)
+2. In the `config.yml`, change the engine protocol to `homemade`
+3. Create a class in some file that extends `MinimalEngine` (in `strategies.py`).
+>>>>>>> 444c4b61e307d64957d26398cd436839273c0182
     - Look at the `strategies.py` file to see some examples.
     - If you don't know what to implement, look at the `EngineWrapper` or `UCIEngine` class.
         - You don't have to create your own engine, even though it's an "EngineWrapper" class.<br>
           The examples just implement `search`.
+<<<<<<< HEAD
 4. At the bottom of `engine_wrapper.py` change `getHomemadeEngine()` to return your class
     - In this case, you could change it to:
 
@@ -113,6 +126,12 @@ Steps to create a custom bot
 5. In the folder `engines` create a file named `engine_name`,
    possibly with some explainer text like `dummy engine file`.
     - Required because config.yml has `engine.dir`, and the code checks if it exists
+=======
+4. In the `config.yml`, change the name from engine_name to the name of your class
+    - In this case, you could change it to:
+      
+      `name: "RandomMove"`
+>>>>>>> 444c4b61e307d64957d26398cd436839273c0182
 
 ## Tips & Tricks
 - You can specify a different config file with the `--config` argument.

@@ -1,14 +1,21 @@
+"""
+Some example strategies for people who want to create a custom, homemade bot.
+And some handy classes to extend
+"""
 
+# import chess
+# import chess.engine
 import random
 from engine_wrapper import EngineWrapper
+
 
 class FillerEngine:
     """
     Not meant to be an actual engine.
+
     This is only used to provide the property "self.engine"
     in "MinimalEngine" which extends "EngineWrapper"
     """
-
     def __init__(self, main_engine, name=None):
         self.id = {
             "name": name
@@ -30,8 +37,10 @@ class FillerEngine:
 class MinimalEngine(EngineWrapper):
     """
     Subclass this to prevent a few random errors
+
     Even though MinimalEngine extends EngineWrapper,
     you don't have to actually wrap an engine.
+
     At minimum, just implement `search`,
     however you can also change other methods like
     `notify`, `first_search`, `get_time_control`, etc.
@@ -41,7 +50,7 @@ class MinimalEngine(EngineWrapper):
         super().__init__(commands, options, stderr)
         self.go_commands = options.pop("go_commands", {}) or {}
 
-        self.name = self.__class__.__name__ if name is None else name
+        self.engine_name = self.__class__.__name__ if name is None else name
 
         self.last_move_info = []
         self.engine = FillerEngine(self, name=self.name)
@@ -63,15 +72,15 @@ class MinimalEngine(EngineWrapper):
 
     def notify(self, method_name, *args, **kwargs):
         """
-        The EngineWrapper class sometimes calls methods on `self.engine`.
-
-        `self.engine` is a filler property that notifies `self`
+        The EngineWrapper class sometimes calls methods on "self.engine".
+        "self.engine" is a filler property that notifies <self>
         whenever an attribute is called.
+
         Nothing happens unless the main engine does something.
 
-        Simply put, the following code is equivalent\n
-        `self.engine.<method_name>(<*args>, <**kwargs>)`\n
-        `self.notify(<method_name>, <*args>, <**kwargs>)`
+        Simply put, the following code is equivalent
+        self.engine.<method_name>(<*args>, <**kwargs>)
+        self.notify(<method_name>, <*args>, <**kwargs>)
         """
         pass
 
@@ -96,7 +105,6 @@ class Alphabetical(ExampleEngine):
 
 class FirstMove(ExampleEngine):
     """Gets the first move when sorted by uci representation"""
-
     def search(self, board, *args):
         moves = list(board.legal_moves)
         moves.sort(key=str)
